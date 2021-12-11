@@ -17,21 +17,12 @@ all_center_container_css = """
     width: 100vh;
 """
 
-container = output()
-
-
-def update_file_list():
-    global container
-    container = [put_text(i) for i in os.listdir("asset")]
-    put_column(container)
-
 
 def validate(data):
     start_time = time.time()
     open(f'asset/{uuid.uuid1()}_{data["source_1"]["filename"]}', 'wb').write(data['source_1']['content'])
     open(f'asset/{uuid.uuid1()}_{data["source_2"]["filename"]}', 'wb').write(data['source_2']['content'])
     toast(f"Успешно: время - {time.time() - start_time} сек.")
-    update_file_list()
 
 
 # домашнаяя страница
@@ -42,5 +33,3 @@ def home_page():
             input('Текст для сурса 1', name='text_1'),
             input('Текст для сурса 2', name='text_2')
         ], validate=validate)
-
-    update_file_list()
