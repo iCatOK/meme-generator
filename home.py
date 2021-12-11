@@ -36,4 +36,4 @@ def home_page():
     
     
 
-    put_text(f"{os.listdir('assets')}")
+    put_text(f"{os.listdir('asset')}")
