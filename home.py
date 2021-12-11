@@ -1,6 +1,7 @@
 from pywebio.output import output, put_column, put_image, put_scrollable, put_text, toast, use_scope
 from pywebio.input import file_upload, input_group, input
 import uuid
+import os
 
 
 # стиль главного контейнера
@@ -32,7 +33,7 @@ def home_page():
             input('Текст для сурса 1', name='text_1'),
             input('Текст для сурса 2', name='text_2')
         ], validate=validate)
+    
+    
 
-    for _ in range(2):
-        f1 = file_upload("Сурс 1")                  
-        open('asset/'+f1['filename'], 'wb').write(f1['content'])
+    put_text(f"{os.listdir('assets')}")
