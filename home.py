@@ -33,7 +33,3 @@ def home_page():
             input('Текст для сурса 1', name='text_1'),
             input('Текст для сурса 2', name='text_2')
         ], validate=validate)
-    
-    
-
-    put_text(f"{os.listdir('asset')}")
