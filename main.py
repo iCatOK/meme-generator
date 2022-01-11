@@ -3,6 +3,8 @@ from pywebio.session import go_app
 from home import home_page
 import argparse
 
+from lab1 import lab_one
+
 
 # главная страница сайта - редирект на страницу авторизации
 def index():
@@ -12,7 +14,8 @@ def index():
 # основные модули сайта
 main_router = [
     index,
-    home_page
+    home_page,
+    lab_one
 ]
 
 
